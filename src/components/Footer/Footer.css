@@ -1,0 +1,83 @@
+.myntra-footer {
+  margin-top: 50px;
+  background: #fafbfc;
+  color: #282c3f;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 55px 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-column h3 {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.footer-column a {
+  color: #696e79;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.footer-column a:hover {
+  color: #ff3f6c;
+}
+
+.footer-text {
+  color: #696e79;
+  font-size: 13px;
+}
+
+.app-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.app-buttons button {
+  border: 0;
+  padding: 10px 14px;
+  background: #282c3f;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: auto;
+  border-top: 1px solid #ddd;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #696e79;
+  font-size: 12px;
+}
+
+@media (max-width: 800px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}

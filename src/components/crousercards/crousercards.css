@@ -1,0 +1,120 @@
+.crousercards-section {
+  width: 100%;
+  overflow: hidden;
+}
+
+.crousercards-promo-image {
+  display: block;
+  width: 100%;
+  margin: 30px;
+  height: auto;
+}
+
+.crousercards-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3.8 / 1;
+}
+
+.crousercards-controls {
+  position: absolute;
+  right: 5%;
+  bottom: 18px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.crousercards-arrow,
+.crousercards-dot {
+  display: grid;
+  place-items: center;
+  border: 0;
+  cursor: pointer;
+}
+
+.crousercards-arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  color: #282c3f;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.crousercards-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.crousercards-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(40, 44, 63, 0.38);
+  transition: width 160ms ease, background-color 160ms ease;
+}
+
+.crousercards-dot.is-active {
+  width: 22px;
+  border-radius: 8px;
+  background: #ff3f6c;
+}
+
+.crousercards-arrow:focus-visible,
+.crousercards-dot:focus-visible {
+  outline: 2px solid #ff3f6c;
+  outline-offset: 3px;
+}
+
+.crousercards-slide {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  animation: slideshow-enter 600ms 70ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.crousercards-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@keyframes slideshow-enter {
+  from {
+    opacity: 0;
+    transform: translateX(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .crousercards-controls {
+    right: 50%;
+    bottom: 12px;
+    transform: translateX(50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crousercards-dot {
+    transition: none;
+  }
+
+  .crousercards-slide,
+  .crousercards-image {
+    animation: none;
+  }
+}
